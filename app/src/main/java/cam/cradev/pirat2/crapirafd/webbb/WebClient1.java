@@ -32,7 +32,6 @@ public class WebClient1 extends WebViewClient {
     public void onPageStarted(WebView view, String url, Bitmap favicon) {
         super.onPageStarted(view, url, favicon);
         if(url.contains("404")){
-            Log.e("404t","13324");
             web1.startActivity(new Intent(web1.getApplicationContext(), MainActivity.class));
             web1.finishAffinity();
         }
