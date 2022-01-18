@@ -46,7 +46,7 @@ public class CP extends Activity {
         progressBar = findViewById(R.id.progressBar);
         WebClient1.cpp = this;
         hfd();
-        if (sas != 0){
+        if (sas == 0){
 
             new Thread(new Runnable() {
                 @RequiresApi(api = Build.VERSION_CODES.O)
