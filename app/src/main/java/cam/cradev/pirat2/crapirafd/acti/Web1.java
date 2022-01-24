@@ -32,35 +32,30 @@ public class Web1 extends Activity {
         web1 = findViewById(R.id.web1);
 
 
-        CookieManager.getInstance().setAcceptThirdPartyCookies(web1, true);
-        CookieManager.getInstance().setAcceptCookie(true);
-        web1.getSettings().setUseWideViewPort(true);
-        web1.getSettings().setLoadsImagesAutomatically(true);
-        web1.setSaveEnabled(true);
-        web1.getSettings().setMixedContentMode(0);
-        web1.setFocusable(true);
+        //update Settings
+        web1.getSettings().setAppCacheEnabled(true);
+        web1.getSettings().setAllowFileAccessFromFileURLs(true);
         web1.getSettings().setSaveFormData(true);
-        web1.getSettings().setAllowFileAccess(true);
+        web1.getSettings().setMixedContentMode(0);
+        web1.getSettings().setSavePassword(true);
+        web1.getSettings().setAllowContentAccess(true);
+        web1.getSettings().setRenderPriority(android.webkit.WebSettings.RenderPriority.HIGH);
+        web1.getSettings().setEnableSmoothTransition(true);
+        web1.getSettings().setLoadsImagesAutomatically(true);
+        web1.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        web1.getSettings().setDatabaseEnabled(true);
+        web1.getSettings().setLoadWithOverviewMode(true);
+        web1.getSettings().setUseWideViewPort(true);
         web1.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
         web1.getSettings().setDomStorageEnabled(true);
-        web1.getSettings().setAllowFileAccessFromFileURLs(true);
-        web1.getSettings().setSavePassword(true);
-        web1.getSettings().setDatabaseEnabled(true);
-        web1.getSettings().setRenderPriority(android.webkit.WebSettings.RenderPriority.HIGH);
-        web1.getSettings().setCacheMode(android.webkit.WebSettings.LOAD_DEFAULT);
-        web1.getSettings().setAppCacheEnabled(true);
-        web1.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        web1.getSettings().setAllowFileAccess(true);
         web1.getSettings().setJavaScriptEnabled(true);
-        web1.getSettings().setAllowContentAccess(true);
-        web1.getSettings().setLoadWithOverviewMode(true);
-        web1.getSettings().setEnableSmoothTransition(true);
-        web1.setFocusableInTouchMode(true);
+        web1.getSettings().setCacheMode(android.webkit.WebSettings.LOAD_DEFAULT);
+
         web1.setWebViewClient(new WebClient1(this));
         web1.setWebChromeClient(new WebChrome1(this));
 
-        Log.e("link","" + getIntent().getStringExtra("ueghjd"));
         web1.loadUrl(getIntent().getStringExtra("ueghjd"));
-
     }
 
     @Override
